@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int comparision(char *p1,int size,char *p2){
 	int i;
@@ -20,7 +21,10 @@ char tipi[6]="basla";
 char end[4]="end";
 scanf(" %d %d",&satir,&sutun);
 ++sutun;
-char dizi[satir][sutun];
+char *dizi[satir];
+for(i=0;i<satir;i++){
+	dizi[i]=(char*)malloc(sutun*sizeof(char));
+}	
 int oduller[satir][sutun];
 int odul_puani;
 int toplam_odulu=0;
